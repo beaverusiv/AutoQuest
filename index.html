@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AutoQuest v0.1</title>
+	<link href="css/style.css" rel="stylesheet"/>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+	<script type="text/javascript" src="js/jquery.progressbar.min.js"></script>
+	<script type="text/javascript" src="js/items.js"></script>
+	<script type="text/javascript" src="js/character.js"></script>
+	<script type="text/javascript" src="js/monsters.js"></script>
+	<script type="text/javascript" src="js/quests.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+	$(document).ready(function() {
+		var game = new GameEngine();
+		game.run();
+	});
+	</script>
+</head>
+<body>
+	<table id="screen">
+		<tr>
+			<td class="skinny">Name:</td><td class="fat" id="lcs-name"></td>
+			<td class="skinny">Level:</td><td class="fat" id="lcs-level"></td>
+		</tr><tr>
+			<td>Race:</td><td id="lcs-race"></td>
+			<td>Class:</td><td id="lcs-class"></td>
+		</tr><tr>
+			<td>Exp:</td><td id="lcs-exp"></td>
+			<td>Gold:</td><td id="lcs-gold"></td>
+		</tr><tr>
+			<td>HP:</td><td id="lcs-hp"></td>
+			<td>MP:</td><td id="lcs-mp"></td>
+		</tr><tr>
+			<td>STR:</td><td id="lcs-str"></td>
+			<td>DEX:</td><td id="lcs-dex"></td>
+		</tr><tr>
+			<td>INT:</td><td id="lcs-int"></td>
+			<td>SPD:</td><td id="lcs-spd"></td>
+		</tr><tr>
+			<td>DEF:</td><td id="lcs-def"></td>
+			<td>DMG:</td><td id="lcs-dmg"></td>
+		</tr><tr>
+			<td>Fire:</td><td id="lcs-fire"></td>
+			<td>Cold:</td><td id="lcs-cold"></td>
+		</tr><tr>
+			<td>Light:</td><td id="lcs-light"></td>
+			<td>Poison:</td><td id="lcs-poison"></td>
+		</tr><tr>
+			<td>Amulet:</td><td id="lcs-equip0"></td>
+			<td>Helm:</td><td id="lcs-equip1"></td>
+		</tr><tr>
+			<td>Ring:</td><td id="lcs-equip2"></td>
+			<td>Ring:</td><td id="lcs-equip3"></td>
+		</tr><tr>
+			<td>Pauldrons:</td><td id="lcs-equip4"></td>
+			<td>Armour:</td><td id="lcs-equip5"></td>
+		</tr><tr>
+			<td>Gloves:</td><td id="lcs-equip6"></td>
+			<td>Belt:</td><td id="lcs-equip7"></td>
+		</tr><tr>
+			<td>Leggings</td><td id="lcs-equip8"></td>
+			<td>Greaves</td><td id="lcs-equip9"></td>
+		</tr><tr>
+			<td>Weapon:</td><td id="lcs-equip10"></td>
+			<td>Shield:</td><td id="lcs-equip11"></td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv0">...</td>
+			<td colspan="2" id="lcs-inv1">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv2">...</td>
+			<td colspan="2" id="lcs-inv3">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv4">...</td>
+			<td colspan="2" id="lcs-inv5">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv6">...</td>
+			<td colspan="2" id="lcs-inv7">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv8">...</td>
+			<td colspan="2" id="lcs-inv9">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv10">...</td>
+			<td colspan="2" id="lcs-inv11">...</td>
+		</tr><tr>
+			<td colspan="2" id="lcs-inv12">...</td>
+			<td colspan="2" id="lcs-inv13">...</td>
+		</tr><tr>
+			<td>Quest:</td>
+			<td colspan="2" id="lcs-quest">...</td>
+			<td id="lcs-quest-prog"></td>
+		</tr><tr>
+			<td colspan="3" id="lcs-action"></td>
+			<td id="lcs-action-prog"></td>
+		</tr>
+	</table>
+</body>
+</html>
