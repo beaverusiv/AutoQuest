@@ -11,23 +11,3 @@
 #screen td.fat {
 	width: 400px;
 }
-
-.tile {
-	display: block;
-	width: 16px;
-	height: 16px;
-	position: absolute;
-	background: red;
-}
-
-#tile0x0 { left: 0; top: 0; }
-#tile0x1 { left: 16px; top: 0; }
-#tile0x2 { left: 32px; top: 0; }
-
-#tile1x0 { left: 0; top: 16px; }
-#tile1x1 { left: 16px; top: 16px; }
-#tile1x2 { left: 32px; top: 16px; }
-
-#tile2x0 { left: 0; top: 32px; }
-#tile2x1 { left: 16px; top: 32px; }
-#tile2x2 { left: 32px; top: 32px; }
