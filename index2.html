@@ -3,25 +3,106 @@
 <head>
 	<title>AutoQuest v0.2</title>
 	<meta charset="utf-8">
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.backgroundPosition.js"></script>
+	<script src="js/jquery.progressbar.min.js"></script>
+	<script src="js/items.js"></script>
+	<script src="js/character.js"></script>
+	<script src="js/monsters.js"></script>
+	<script src="js/quests.js"></script>
+	<script src="js/main.js"></script>
 	<script src="js/tiles.js"></script>
 	<link href="css/style2.css" rel="stylesheet"/>
+	<script>
+		// var t = new TileEngine();
+		// t.draw();
+		$(document).ready(function() {
+			var game = new GameEngine();
+			game.run();
+		});
+	</script>
 </head>
 <body>
-	<div id="tile0x0" class="tile"></div>
-	<div id="tile0x1" class="tile"></div>
-	<div id="tile0x2" class="tile"></div>
-
-	<div id="tile1x0" class="tile"></div>
-	<div id="tile1x1" class="tile"></div>
-	<div id="tile1x2" class="tile"></div>
-
-	<div id="tile2x0" class="tile"></div>
-	<div id="tile2x1" class="tile"></div>
-	<div id="tile2x2" class="tile"></div>
-	
-	<script>
-		var t = new TileEngine();
-		t.draw();
-	</script>
+	<div id="game"><h1>GAME</h1></div>
+	<!-- TODO: Put EXP,HP,MP as vertical progress bars on the side of minimap -->
+	<div id="minimap"><h1>MINIMAP</h1></div>
+	<div id="lcs">
+		<table>
+			<tr>
+				<td class="skinny">Name:</td><td class="fat" id="lcs-name"></td>
+				<td class="skinny">Level:</td><td class="fat" id="lcs-level"></td>
+			</tr><tr>
+				<td>Race:</td><td id="lcs-race"></td>
+				<td>Class:</td><td id="lcs-class"></td>
+			</tr><tr>
+				<td>Exp:</td><td id="lcs-exp"></td>
+				<td>Gold:</td><td id="lcs-gold"></td>
+			</tr><tr>
+				<td>HP:</td><td id="lcs-hp"></td>
+				<td>MP:</td><td id="lcs-mp"></td>
+			</tr><tr>
+				<td>STR:</td><td id="lcs-str"></td>
+				<td>DEX:</td><td id="lcs-dex"></td>
+			</tr><tr>
+				<td>INT:</td><td id="lcs-int"></td>
+				<td>SPD:</td><td id="lcs-spd"></td>
+			</tr><tr>
+				<td>DEF:</td><td id="lcs-def"></td>
+				<td>DMG:</td><td id="lcs-dmg"></td>
+			</tr><tr>
+				<td>Fire:</td><td id="lcs-fire"></td>
+				<td>Cold:</td><td id="lcs-cold"></td>
+			</tr><tr>
+				<td>Light:</td><td id="lcs-light"></td>
+				<td>Poison:</td><td id="lcs-poison"></td>
+			</tr><tr>
+				<td>Amulet:</td><td class="lcs-equip" id="lcs-equip0"></td>
+				<td>Helm:</td><td class="lcs-equip" id="lcs-equip1"></td>
+			</tr><tr>
+				<td>Ring:</td><td class="lcs-equip" id="lcs-equip2"></td>
+				<td>Ring:</td><td class="lcs-equip" id="lcs-equip3"></td>
+			</tr><tr>
+				<td>Pauldrons:</td><td class="lcs-equip" id="lcs-equip4"></td>
+				<td>Armour:</td><td class="lcs-equip" id="lcs-equip5"></td>
+			</tr><tr>
+				<td>Gloves:</td><td class="lcs-equip" id="lcs-equip6"></td>
+				<td>Belt:</td><td class="lcs-equip" id="lcs-equip7"></td>
+			</tr><tr>
+				<td>Leggings</td><td class="lcs-equip" id="lcs-equip8"></td>
+				<td>Greaves</td><td class="lcs-equip" id="lcs-equip9"></td>
+			</tr><tr>
+				<td>Weapon:</td><td class="lcs-equip" id="lcs-equip10"></td>
+				<td>Shield:</td><td class="lcs-equip" id="lcs-equip11"></td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv0">...</td>
+				<td colspan="2" id="lcs-inv1">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv2">...</td>
+				<td colspan="2" id="lcs-inv3">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv4">...</td>
+				<td colspan="2" id="lcs-inv5">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv6">...</td>
+				<td colspan="2" id="lcs-inv7">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv8">...</td>
+				<td colspan="2" id="lcs-inv9">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv10">...</td>
+				<td colspan="2" id="lcs-inv11">...</td>
+			</tr><tr>
+				<td colspan="2" id="lcs-inv12">...</td>
+				<td colspan="2" id="lcs-inv13">...</td>
+			</tr><tr>
+				<td>Quest:</td>
+				<td colspan="2" id="lcs-quest">...</td>
+				<td id="lcs-quest-prog"></td>
+			</tr><tr>
+				<td colspan="3" id="lcs-action"></td>
+				<td id="lcs-action-prog"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
