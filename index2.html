@@ -12,14 +12,17 @@
 	<script src="js/quests.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/tiles.js"></script>
+	<script src="js/crafty.js"></script>
+	<script src="js/game.js"></script>
 	<link href="css/style2.css" rel="stylesheet"/>
 	<script>
 		// var t = new TileEngine();
 		// t.draw();
-		$(document).ready(function() {
-			var game = new GameEngine();
-			game.run();
-		});
+		// $(document).ready(function() {
+		// 	var game = new GameEngine();
+		// 	game.run();
+		// });
+		 window.addEventListener('load', Game.start);
 	</script>
 </head>
 <body>
