@@ -53,4 +53,115 @@ Crafty.scene('Game', function() {
         .at(197, 326)
         .label('MP')
         .update(10);
+
+    Crafty.e('DisplayText')
+        .at(10, 346)
+        .label('STR')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(197, 346)
+        .label('DEX')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(10, 366)
+        .label('INT')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(197, 366)
+        .label('SPD')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(10, 386)
+        .label('DEF')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(197, 386)
+        .label('DMG')
+        .update(10);
+
+    Crafty.e('DisplayText')
+        .at(10, 406)
+        .label('Fire')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(197, 406)
+        .label('Light')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(10, 426)
+        .label('Cold')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(197, 426)
+        .label('Poison')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(10, 446)
+        .label('Amulet')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(197, 446)
+        .label('Helm')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(10, 486)
+        .label('Ring')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(197, 486)
+        .label('Ring')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(10, 526)
+        .label('Pauldrons')
+        .update('Superior Healthy Shoulder Pads of Running');
+
+    Crafty.e('DisplayText')
+        .at(197, 526)
+        .label('Armour')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(10, 566)
+        .label('Gloves')
+        .update('Master Lined Mittens of Riding');
+
+    Crafty.e('DisplayText')
+        .at(197, 566)
+        .label('Belt')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(10, 606)
+        .label('Leggings')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(197, 606)
+        .label('Greaves')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(10, 646)
+        .label('Weapon')
+        .update('...');
+
+    Crafty.e('DisplayText')
+        .at(197, 646)
+        .label('Shield')
+        .update('...');
+
 });
