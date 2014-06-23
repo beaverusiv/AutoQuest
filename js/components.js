@@ -47,5 +47,38 @@ Crafty.c('Character', {
 		this._stats = [10,10,10,100,30,10,2,5,0,0,0,0];
 		this._stat_names = ['STR', 'DEX', 'INT', 'HP', 'MP', 'DEF', 'DMG', 'SPD', 'FRES', 'CRES', 'LRES', 'PRES'];
 	},
+});
 
-})
+// Display Text
+Crafty.c('DisplayText', {
+	init: function() {
+		this.requires('2D, DOM, Text')
+			.attr({ x: 0, y: 0, w:177, value: 0, name: '...' })
+			.textFont({ family: 'Cinzel', size: '11px' })
+			.text('...');
+	},
+
+	// Position text
+	at: function(x, y) {
+		this.attr({ x: x, y: y });
+		return this;
+	},
+
+	// Set label
+	label: function(n) {
+		this.attr({ name: n });
+		return this;
+	},
+
+	// Change text
+	update: function(val) {
+		this.attr({ value: val });
+
+		if('...' == this.name) {
+			this.text('...');
+		} else {
+			this.text(this.name + ': ' + this.value);
+		}
+		return this;
+	},
+});

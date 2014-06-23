@@ -14,4 +14,43 @@ Crafty.scene('Game', function() {
     }
 
     // LCS
+    Crafty.e('DisplayText')
+        .at(10, 266)
+        .label('Name')
+        .update('BeaverusIV');
+
+    Crafty.e('DisplayText')
+        .at(197, 266)
+        .label('Level')
+        .update(1);
+
+    Crafty.e('DisplayText')
+        .at(10, 286)
+        .label('Race')
+        .update('Human');
+
+    Crafty.e('DisplayText')
+        .at(197, 286)
+        .label('Class')
+        .update('Barbarian');
+
+    Crafty.e('DisplayText')
+        .at(10, 306)
+        .label('Exp')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(197, 306)
+        .label('Gold')
+        .update(0);
+
+    Crafty.e('DisplayText')
+        .at(10, 326)
+        .label('HP')
+        .update(100);
+
+    Crafty.e('DisplayText')
+        .at(197, 326)
+        .label('MP')
+        .update(10);
 });
