@@ -53,14 +53,14 @@ Crafty.c('Character', {
 Crafty.c('DisplayText', {
 	init: function() {
 		this.requires('2D, DOM, Text')
-			.attr({ x: 0, y: 0, w:177, value: 0, name: '...' })
-			.textFont({ family: 'Cinzel', size: '11px' })
+			.attr({ x: 0, y: 0, w: Game.character_screen.col_width, value: 0, name: '...' })
+			.textFont({ family: 'Noticia Text', size: '12px' })
 			.text('...');
 	},
 
 	// Position text
-	at: function(x, y) {
-		this.attr({ x: x, y: y });
+	at: function(col, row) {
+		this.attr({ x: Game.character_screen.offset_x + 10 + (col * (Game.character_screen.col_width + Game.character_screen.padding)), y: Game.character_screen.offset_y + (row * Game.character_screen.row_height) });
 		return this;
 	},
 

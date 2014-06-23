@@ -9,6 +9,14 @@ Game = {
             height: 16
         }
     },
+    character_screen: {
+        offset_x: 0,
+        offset_y: 266,
+        padding: 10,
+        width: 384,
+        row_height: 18,
+        col_width: 170
+    },
     // The total width of the game screen.
     width: function() {
         return 1280;
@@ -19,6 +27,7 @@ Game = {
     },
     // Initialize and start our game
     start: function() {
+        Game.character_screen.col_width = (Game.character_screen.width - (Game.character_screen.padding * 3)) / 2;
         // Start crafty and set a background color so that we can see it's working
         Crafty.init(Game.width(), Game.height());
         Crafty.background('rgb(249, 223, 125)');
