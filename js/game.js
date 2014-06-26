@@ -54,6 +54,7 @@ Game = {
         shield: '',
         inventory: []
     },
+    console_line_ids: 0,
     // The total width of the game screen.
     width: function() {
         return 1280;
@@ -81,6 +82,7 @@ Game = {
                 Game.startTimedProgressBar(_event, _percent, _speed, _callback);
             } else {
                 _callback();
+                Crafty.trigger(_event+'_done');
             }
         }, _speed);
     },

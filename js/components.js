@@ -87,6 +87,7 @@ Crafty.c('ConsoleItem', {
 });
 
 Crafty.c('ConsoleLine', {
+	_done: '',
 	init: function() {
 		Crafty.trigger('ConsoleLineShift');
 		this.requires('Text, ConsoleItem')
@@ -100,5 +101,16 @@ Crafty.c('ConsoleLine', {
 	            this.updateBarProgress(percent);
 	        });
 	    Game.startTimedProgressBar(_event, 0, _speed, _callback);
+
+	    this.bind(_event+'_done', function() {
+	    	this.text(this._done);
+	    })
+
+	    return this;
+	},
+	done: function(text) {
+		this._done = text;
+
+		return this;
 	}
 });
