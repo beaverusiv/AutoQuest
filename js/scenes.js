@@ -12,7 +12,7 @@ Crafty.scene('Travelling__fight', function() {
         .text('Travelling to the killing fields...');
 
     Crafty.e("2D, DOM, ProgressBar")
-        .attr({ x: 554, y : 622, w: 100, h: 10, z: 100 })
+        .attr({ x: 1070, y : 622, w: 200, h: 10, z: 100 })
         .progressBar(100, false, "blue", "green")
         .bind("TRAVELLING_TO_FIGHT", function(percent) {
             this.updateBarProgress(percent);
