@@ -2,31 +2,27 @@ Crafty.scene('Fighting', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    Game.pushConsoleLine('Fighting a Monstrous Boar...', 'FIGHTING', 1, function() { Crafty.scene('Fighting'); });
+    Crafty.e('ConsoleLine')
+        .text('Fighting a Monstrous Boar...')
+        .bar('FIGHTING', 40, function() { Crafty.scene('Fighting'); });
 });
 
 Crafty.scene('Travelling__fight', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    Game.pushConsoleLine('Travelling to the killing fields...', 'TRAVELLING_TO_FIGHT', 20, function() { Crafty.scene('Fighting'); });
+    Crafty.e('ConsoleLine')
+        .text('Travelling to the killing fields...')
+        .bar('TRAVELLING_TO_FIGHT', 20, function() { Crafty.scene('Fighting'); });
 });
 
-Crafty.scene('Travelling__home', function() {
+Crafty.scene('Travelling__town', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-     Crafty.e('2D, DOM, Text')
-        .attr({ x: 394, y: 620, w: 300 })
-        .text('Travelling to the village...');
-
-    Crafty.e("2D, DOM, ProgressBar")
-        .attr({ x: 554, y : 622, w: 100, h: 10, z: 100 })
-        .progressBar(100, false, "blue", "green")
-        .bind("TRAVELLING_TO_FIGHT", function(percent) {
-            this.updateBarProgress(percent);
-        });
-    Game.startTimedProgressBar("TRAVELLING_TO_FIGHT", 0, 20, function() { Crafty.scene('Town'); });
+    Crafty.e('ConsoleLine')
+        .text('Travelling to the village...')
+        .bar('TRAVELLING_TO_TOWN', 20, function() { Crafty.scene('Town'); });
 });
 
 // TODO: town or inn?

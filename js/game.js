@@ -86,12 +86,4 @@ Game = {
     },
     // Progrss bar that increments when an event is triggered
     //startEventProgressBar()
-    pushConsoleLine: function(_text, _event, _speed, _callback) {
-        // Send out event to push the previous lines up
-        Crafty.trigger('ConsoleLineShift');
-
-        Crafty.e('ConsoleLine')
-            .text(_text)
-            .bar(_event, _speed, _callback);
-    },
 }

@@ -88,6 +88,7 @@ Crafty.c('ConsoleItem', {
 
 Crafty.c('ConsoleLine', {
 	init: function() {
+		Crafty.trigger('ConsoleLineShift');
 		this.requires('Text, ConsoleItem')
 			.attr({ x: 394, y: 738, w: 876 });
 	},
