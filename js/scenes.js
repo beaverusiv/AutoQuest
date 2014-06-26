@@ -7,7 +7,7 @@ Crafty.scene('Travelling__fight', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    Game.pushConsoleLine('Travelling to the killing fields...', 'TRAVELLING_TO_FIGHT', 20, function() { Crafty.scene('Fighting'); });
+    Game.pushConsoleLine('Travelling to the killing fields...', 'TRAVELLING_TO_FIGHTa', 20, function() { Crafty.scene('Fighting'); });
 });
 
 Crafty.scene('Travelling__home', function() {
