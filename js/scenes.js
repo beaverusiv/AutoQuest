@@ -1,6 +1,8 @@
 Crafty.scene('Fighting', function() {
     setupMiniMap();
     setupCharacterScreen();
+
+    Game.pushConsoleLine('Fighting a Monstrous Boar...', 'FIGHTING', 1, function() { Crafty.scene('Fighting'); });
 });
 
 Crafty.scene('Travelling__fight', function() {

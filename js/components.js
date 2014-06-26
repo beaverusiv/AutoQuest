@@ -77,23 +77,24 @@ Crafty.c('DisplayText', {
 
 Crafty.c('ConsoleItem', {
 	init: function() {
-		this.requires('2D')
-			.bind("ConsoleLineShift", this._shift);
+		this.requires('2D, DOM, Persist')
+			.bind('ConsoleLineShift', this._shift);
 	},
 	_shift: function () {
 		this.y -= 20;
+		if(this.y < 678) this.destroy();
 	}
 });
 
 Crafty.c('ConsoleLine', {
 	init: function() {
-		this.requires('2D, DOM, Text, ConsoleItem')
+		this.requires('Text, ConsoleItem')
 			.attr({ x: 394, y: 738, w: 876 });
 	},
 	bar: function(_event, _speed, _callback) {
-		Crafty.e("2D, DOM, ProgressBar, ConsoleItem")
+		Crafty.e('ProgressBar, ConsoleItem')
 	        .attr({ x: 1070, y : 740, w: 200, h: 10, z: 100 })
-	        .progressBar(100, false, "blue", "green")
+	        .progressBar(100, false, 'blue', 'green')
 	        .bind(_event, function(percent) {
 	            this.updateBarProgress(percent);
 	        });
