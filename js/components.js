@@ -74,3 +74,19 @@ Crafty.c('DisplayText', {
 		return this;
 	},
 });
+
+Crafty.c('ConsoleLine', {
+	init: function() {
+		this.requires('2D, DOM, Text')
+			.attr({ x: 394, y: 758, w: 876 });
+	},
+	bar: function(_event, _speed, _callback) {
+		this._bar = Crafty.e("2D, DOM, ProgressBar")
+	        .attr({ x: 1070, y : 756, w: 200, h: 10, z: 100 })
+	        .progressBar(100, false, "blue", "green")
+	        .bind(_event, function(percent) {
+	            this.updateBarProgress(percent);
+	        });
+	    Game.startTimedProgressBar(_event, 0, _speed, _callback);
+	}
+});

@@ -54,6 +54,7 @@ Game = {
         shield: '',
         inventory: []
     },
+    console: [],
     // The total width of the game screen.
     width: function() {
         return 1280;
@@ -86,4 +87,13 @@ Game = {
     },
     // Progrss bar that increments when an event is triggered
     //startEventProgressBar()
+    pushConsoleLine: function(_text, _event, _speed, _callback) {
+        if(4 < Game.console.length) {
+            Game.console.shift();
+            Crafty.trigger('ConsoleLineShift');
+        }
+        Game.console.push(Crafty.e('ConsoleLine')
+            .text(_text)
+            .bar(_event, _speed, _callback));
+    },
 }
