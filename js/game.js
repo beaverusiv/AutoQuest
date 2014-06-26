@@ -70,18 +70,20 @@ Game = {
         Crafty.background('rgb(249, 223, 125)');
          
         // Simply start the "Game" scene to get things going
-        Crafty.scene('Travelling');
+        Crafty.scene('Travelling__fight');
     },
-
-    startProgressBar: function(_event, _percent, _callback) {
+    // Progress bar that runs for a certain amount of time. Total time is _speed * 100
+    startTimedProgressBar: function(_event, _percent, _speed, _callback) {
         setTimeout(function(){
             if(100 >= _percent) {
                 Crafty.trigger(_event, _percent);
-                _percent += 10;
-                Game.startProgressBar(_event, _percent, _callback);
+                _percent++;
+                Game.startTimedProgressBar(_event, _percent, _speed, _callback);
             } else {
                 _callback();
             }
-        }, 50);
-    }
+        }, _speed);
+    },
+    // Progrss bar that increments when an event is triggered
+    //startEventProgressBar()
 }
