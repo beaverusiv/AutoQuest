@@ -41,14 +41,6 @@ Crafty.c('Bush', {
 	},
 });
 
-// Character
-Crafty.c('Character', {
-	init: function() {
-		this._stats = [10,10,10,100,30,10,2,5,0,0,0,0];
-		this._stat_names = ['STR', 'DEX', 'INT', 'HP', 'MP', 'DEF', 'DMG', 'SPD', 'FRES', 'CRES', 'LRES', 'PRES'];
-	},
-});
-
 // Display Text
 Crafty.c('DisplayText', {
 	init: function() {
