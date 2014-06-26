@@ -1,6 +1,10 @@
 Game = {
     // This defines our grid's size and the size of each of its tiles
     // 384x256
+    font: {
+        size: '12px',
+        family: 'Noticia Text'
+    },
     map_grid: {
         width: 24,
         height: 16,

@@ -54,7 +54,7 @@ Crafty.c('DisplayText', {
 	init: function() {
 		this.requires('2D, DOM, Text')
 			.attr({ x: 0, y: 0, w: Game.character_screen.col_width, value: 0, name: '...' })
-			.textFont({ family: 'Noticia Text', size: '12px' })
+			.textFont({ family: Game.font.family, size: Game.font.size })
 			.text('...');
 	},
 
