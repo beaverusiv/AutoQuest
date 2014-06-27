@@ -18,6 +18,7 @@ Crafty.scene('Fighting__victory', function(monster) {
     setupCharacterScreen();
 
     Character.gainExp(monster.level);
+    Character.addItem(ItemManager.getItem(monster.level, Character._level));
 
     Crafty.e('ConsoleLine')
         .text('Victory! You gained a Potion and 34 gold!');

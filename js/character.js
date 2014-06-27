@@ -111,39 +111,39 @@ Character = {
 	},
 
 	amulet: function() {
-		return this._equipment[0];
+		return this._equipment[0]._name;
 	},
 	helm: function() {
-		return this._equipment[1];
+		return this._equipment[1]._name;
 	},
 	ring1: function() {
-		return this._equipment[2];
+		return this._equipment[2]._name;
 	},
 	ring2: function() {
-		return this._equipment[3];
+		return this._equipment[3]._name;
 	},
 	pauldrons: function() {
-		return this._equipment[4];
+		return this._equipment[4]._name;
 	},
 	armour: function() {
-		return this._equipment[5];
+		return this._equipment[5]._name;
 	},
 	gloves: function() {
-		return this._equipment[6];
+		return this._equipment[6]._name;
 	},
 	belt: function() {
-		return this._equipment[7];
+		return this._equipment[7]._name;
 	},
 	leggings: function() {
-		return this._equipment[8];
+		return this._equipment[8]._name;
 	},
 	greaves: function() {
-		return this._equipment[9];
+		return this._equipment[9]._name;
 	},
 	weapon: function() {
-		return this._equipment[10];
+		return this._equipment[10]._name;
 	},
 	shield: function() {
-		return this._equipment[11];
+		return this._equipment[11]._name;
 	}
 }
