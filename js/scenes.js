@@ -2,10 +2,10 @@ Crafty.scene('Fighting', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    var monster = MonsterManager.spawn(Game.character.level);
+    var monster = MonsterManager.spawn(Character._level);
 
     //hp / (lvl * def + 0.6 * spd) / (lvl * (dmg + (0.1 * str) + 0.2 * spd)
-    var speed = monster.stats[3] / ((monster.level * monster.stats[5]) + (0.6 * monster.stats[7])) / Game.character.level * (Game.character.dmg + (0.1 * Game.character.str) + (0.2 * Game.character.spd));
+    var speed = monster.stats[3] / ((monster.level * monster.stats[5]) + (0.6 * monster.stats[7])) / Character._level * (Character.dmg() + (0.1 * Character.str()) + (0.2 * Character.spd()));
 
     Crafty.e('ConsoleLine')
         .text('Fighting a '+monster.name+'...')
@@ -18,16 +18,16 @@ Crafty.scene('Fighting__victory', function() {
     setupCharacterScreen();
 
     //TODO: Function based on monster and lvl
-    Game.character.exp += 100;
-    Game.character.level = Math.floor(Game.character.exp / 1000) + 1;
+    Character._exp += 100;
+    Character._level = Math.floor(Character._exp / 1000) + 1;
 
     Crafty.e('ConsoleLine')
         .text('Victory! You gained a Potion and 34 gold!');
 
     // If inventory is full or hp below 15%
     // TODO: replace 100 with maxHp function
-    if( Game.character.inventory.length > Game.character.str / 2 - 3
-        || Math.floor((Game.character.hp * 100) / 100) < 15 ) {
+    if( Character._inventory.length > Character.str() / 2 - 3
+        || Math.floor((Character.hp() * 100) / 100) < 15 ) {
         Crafty.scene('Travelling__town');
     } else {
         Crafty.scene('Fighting');

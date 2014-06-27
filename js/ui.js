@@ -1,3 +1,4 @@
+// TODO: setup an actual map and display a minimap
 function setupMiniMap() {
     for (var x = 0; x < Game.map_grid.width; x++) {
         for (var y = 0; y < Game.map_grid.height; y++) {
@@ -17,150 +18,150 @@ function setupCharacterScreen() {
     Crafty.e('DisplayText')
         .at(0, 0)
         .label('Name')
-        .update(Game.character.name);
+        .update(Character._name);
 
     Crafty.e('DisplayText')
         .at(1, 0)
         .label('Level')
-        .update(Game.character.level);
+        .update(Character._level);
 
     Crafty.e('DisplayText')
         .at(0, 1)
         .label('Race')
-        .update(Game.character.race);
+        .update(Character._race);
 
     Crafty.e('DisplayText')
         .at(1, 1)
         .label('Class')
-        .update(Game.character._class);
+        .update(Character._class);
 
     Crafty.e('DisplayText')
         .at(0, 2)
         .label('Exp')
-        .update(Game.character.exp);
+        .update(Character._exp);
 
     Crafty.e('DisplayText')
         .at(1, 2)
         .label('Gold')
-        .update(Game.character.gold);
+        .update(Character._gold);
 
     Crafty.e('DisplayText')
         .at(0, 3)
         .label('HP')
-        .update(Game.character.hp);
+        .update(Character.hp());
 
     Crafty.e('DisplayText')
         .at(1, 3)
         .label('MP')
-        .update(Game.character.mp);
+        .update(Character.mp());
 
     Crafty.e('DisplayText')
         .at(0, 4)
         .label('STR')
-        .update(Game.character.str);
+        .update(Character.str());
 
     Crafty.e('DisplayText')
         .at(1, 4)
         .label('DEX')
-        .update(Game.character.dex);
+        .update(Character.dex());
 
     Crafty.e('DisplayText')
         .at(0, 5)
         .label('INT')
-        .update(Game.character._int);
+        .update(Character.int());
 
     Crafty.e('DisplayText')
         .at(1, 5)
         .label('SPD')
-        .update(Game.character.spd);
+        .update(Character.spd());
 
     Crafty.e('DisplayText')
         .at(0, 6)
         .label('DEF')
-        .update(Game.character.def);
+        .update(Character.def());
 
     Crafty.e('DisplayText')
         .at(1, 6)
         .label('DMG')
-        .update(Game.character.dmg);
+        .update(Character.dmg());
 
     Crafty.e('DisplayText')
         .at(0, 7)
         .label('Fire')
-        .update(Game.character.fire);
+        .update(Character.fire());
 
     Crafty.e('DisplayText')
         .at(1, 7)
         .label('Light')
-        .update(Game.character.light);
+        .update(Character.light());
 
     Crafty.e('DisplayText')
         .at(0, 8)
         .label('Cold')
-        .update(Game.character.cold);
+        .update(Character.cold());
 
     Crafty.e('DisplayText')
         .at(1, 8)
         .label('Poison')
-        .update(Game.character.poison);
+        .update(Character.poison());
 
     Crafty.e('DisplayText')
         .at(0, 9)
         .label('Amulet')
-        .update(Game.character.amulet?Game.character.amulet:'...');
+        .update(Character.amulet()?Character.amulet():'...');
 
     Crafty.e('DisplayText')
         .at(1, 9)
         .label('Helm')
-        .update(Game.character.helm?Game.character.helm:'...');
+        .update(Character.helm()?Character.helm():'...');
 
     Crafty.e('DisplayText')
         .at(0, 11)
         .label('Ring')
-        .update(Game.character.ring1?Game.character.ring1:'...');
+        .update(Character.ring1()?Character.ring1():'...');
 
     Crafty.e('DisplayText')
         .at(1, 11)
         .label('Ring')
-        .update(Game.character.ring2?Game.character.ring2:'...');
+        .update(Character.ring2()?Character.ring2():'...');
 
     Crafty.e('DisplayText')
         .at(0, 13)
         .label('Pauldrons')
-        .update(Game.character.pauldrons?Game.character.pauldrons:'...');
+        .update(Character.pauldrons()?Character.pauldrons():'...');
 
     Crafty.e('DisplayText')
         .at(1, 13)
         .label('Armour')
-        .update(Game.character.armour?Game.character.armour:'...');
+        .update(Character.armour()?Character.armour():'...');
 
     Crafty.e('DisplayText')
         .at(0, 15)
         .label('Gloves')
-        .update(Game.character.gloves?Game.character.gloves:'...');
+        .update(Character.gloves()?Character.gloves():'...');
 
     Crafty.e('DisplayText')
         .at(1, 15)
         .label('Belt')
-        .update(Game.character.belt?Game.character.belt:'...');
+        .update(Character.belt()?Character.belt():'...');
 
     Crafty.e('DisplayText')
         .at(0, 17)
         .label('Leggings')
-        .update(Game.character.leggings?Game.character.leggings:'...');
+        .update(Character.leggings()?Character.leggings():'...');
 
     Crafty.e('DisplayText')
         .at(1, 17)
         .label('Greaves')
-        .update(Game.character.greaves?Game.character.greaves:'...');
+        .update(Character.greaves()?Character.greaves():'...');
 
     Crafty.e('DisplayText')
         .at(0, 19)
         .label('Weapon')
-        .update(Game.character.weapon?Game.character.weapon:'...');
+        .update(Character.weapon()?Character.weapon():'...');
 
     Crafty.e('DisplayText')
         .at(1, 19)
         .label('Shield')
-        .update(Game.character.shield?Game.character.shield:'...');
+        .update(Character.shield()?Character.shield():'...');
 }
