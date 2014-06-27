@@ -10,16 +10,14 @@ Crafty.scene('Fighting', function() {
     Crafty.e('ConsoleLine')
         .text('Fighting a '+monster.name+'...')
         .done('Fought a '+monster.name+'.')
-        .bar('FIGHTING_'+Game.console_line_ids, speed, function() { Crafty.scene('Fighting__victory'); });
+        .bar('FIGHTING_'+Game.console_line_ids, speed, function() { Crafty.scene('Fighting__victory', monster); });
 });
 
-Crafty.scene('Fighting__victory', function() {
+Crafty.scene('Fighting__victory', function(monster) {
     setupMiniMap();
     setupCharacterScreen();
 
-    //TODO: Function based on monster and lvl
-    Character._exp += 100;
-    Character._level = Math.floor(Character._exp / 1000) + 1;
+    Character.gainExp(monster.level);
 
     Crafty.e('ConsoleLine')
         .text('Victory! You gained a Potion and 34 gold!');

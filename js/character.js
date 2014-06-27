@@ -60,7 +60,7 @@ Character = {
 		//TODO: xp formula
 		if(this._level > 98) return;
 		this._exp += 100;
-		if(Math.floor(this._exp / 1000) > this._level) {
+		if((Math.floor(this._exp / 1000) + 1) > this._level) {
 			this._level++;
 			for(x in this._stats) this._stats[x] += this._class.level_stats[x];
 		}

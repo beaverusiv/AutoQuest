@@ -33,7 +33,7 @@ function setupCharacterScreen() {
     Crafty.e('DisplayText')
         .at(1, 1)
         .label('Class')
-        .update(Character._class);
+        .update(Character._class.name);
 
     Crafty.e('DisplayText')
         .at(0, 2)
