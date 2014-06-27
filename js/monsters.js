@@ -1,5 +1,5 @@
-function MonsterManager() {
-	this._monsters = [ {
+MonsterManager = {
+	_monsters: [ {
 		  name: "Satyr",
 		  stats: [10,10,10,100,30,10,2,5,0,0,0,0],
 		  level_stats: [3,2,1,5,0,0,0,0,0,0,0,0]
@@ -23,17 +23,18 @@ function MonsterManager() {
 		  name: "Maenad",
 		  stats: [10,10,10,100,30,10,2,5,0,0,0,0],
 		  level_stats: [3,2,1,5,0,0,0,0,0,0,0,0]
-		} ];
-	this._current = 0;
+		} ],
 
 	//TODO: spawn based on location
-	this.spawn = function(c_lvl) {
+	spawn: function(c_lvl) {
 		var rand = Math.floor(Math.random() * this._monsters.length + 1) - 1;
-		this._current = this._monsters[rand];
-		this._current.level = Math.floor(Math.random() * c_lvl + 11) - 5;
-		if(this._current.level < 1) this._current.level = 1;
-		for(x in this._current.stats) this._current.stats[x] += this._current.level * this._current.level_stats[x];
-	};
+		monster = this._monsters[rand];
+		monster.level = Math.floor(Math.random() * c_lvl + 11) - 5;
+		if(monster.level < 1) monster.level = 1;
+		for(x in monster.stats) monster.stats[x] += monster.level * monster.level_stats[x];
+
+		return monster;
+	}
 }
 
 /*
