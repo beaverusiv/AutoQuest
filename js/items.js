@@ -5,9 +5,9 @@ function Item(pl, st, pr, n) {
 	this._name = n;
 }
 
-function ItemManager() {
+ItemManager = {
 	//TODO: spawn items that aren't equipment
-	this._qualities = [
+	_qualities: [
 		//Bad
 		{ name: "Rotten", p: 0.3, minlevel: 0, maxlevel: 2 },
 		{ name: "Cracked", p: 0.7, minlevel: 0, maxlevel: 5 },
@@ -16,8 +16,8 @@ function ItemManager() {
 		{ name: "Superior", p: 1.3, minlevel: 8, maxlevel: 100 },
 		{ name: "Master", p: 1.7, minlevel: 18, maxlevel: 100 },
 		{ name: "Legendary", p: 2.4, minlevel: 25, maxlevel: 100 }
-		];
-	this._bases = [
+	],
+	_bases: [
 		//Amulets
 		[ { name: "Amulet", stat: 0, min: 0, max: 0, level: 0, price: 15 },
 		  { name: "Pendant", stat: 0, min: 0, max: 0, level: 10, price: 25 },
@@ -65,10 +65,10 @@ function ItemManager() {
 		  { name: "Aegis", stat: 5, min: 1, max: 10, level: 10, price: 10 },
 		  { name: "Bulwark", stat: 5, min: 5, max: 20, level: 30, price: 25 },
 		  { name: "Buckler", stat: 5, min: 18, max: 26, level: 60, price: 100 } ]
-	];
+	],
 	//TODO: Need a fn which input variables and it spits out a valid item (location, level, source(monster, chest)...
 	//TODO: Resistance items
-	this._prefices = [
+	_prefices: [
 		//DEF prefices
 		{ name: "Lined", stat: 5, min: 1, max: 4, level: 0, price: 2 },
 		{ name: "Reinforced", stat: 5, min: 3, max: 7, level: 10, price: 10 },
@@ -85,8 +85,8 @@ function ItemManager() {
 		{ name: "Magic", stat: 4, min: 1, max: 20, level: 0, price: 2 },
 		{ name: "Wise", stat: 4, min: 5, max: 25, level: 10, price: 12 },
 		{ name: "Wizard's", stat: 4, min: 22, max: 50, level: 25, price: 300 }
-	];
-	this._suffices = [
+	],
+	_suffices: [
 		//STR suffices
 		{ name: "of the Harpy", stat: 0, min: 1, max: 4, level: 0, price: 1 },
 		{ name: "of the Boar", stat: 0, min: 3, max: 7, level: 10, price: 10 },
@@ -103,9 +103,9 @@ function ItemManager() {
 		{ name: "of Hitching", stat: 7, min: 1, max: 4, level: 0, price: 1 },
 		{ name: "of Running", stat: 7, min: 2, max: 7, level: 8, price: 10 },
 		{ name: "of Riding", stat: 7, min: 9, max: 14, level: 15, price: 100 }
-	];
+	],
 	
-	this.getItem = function(m_lvl, c_lvl) {
+	getItem: function(m_lvl, c_lvl) {
 		var st = [0,0,0,0,0,0,0,0,0,0,0,0];
 		var pr = 0;
 		var pl = Math.floor(Math.random() * 12 + 1) - 1; //Random item type.
@@ -136,5 +136,5 @@ function ItemManager() {
 		if(q != "") n = q+" "+p+" "+b+" "+s;
 		else n = p+" "+b+" "+s;
 		return new Item(pl, st, pr, n);
-	};
+	},
 }

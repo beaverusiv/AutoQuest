@@ -92,6 +92,7 @@ Crafty.c('ConsoleLine', {
 		Crafty.trigger('ConsoleLineShift');
 		this.requires('Text, ConsoleItem')
 			.attr({ x: 394, y: 738, w: 876 });
+		Game.console_line_ids = (Game.console_line_ids + 1) % 6;
 	},
 	bar: function(_event, _speed, _callback) {
 		Crafty.e('ProgressBar, ConsoleItem')
