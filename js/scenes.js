@@ -49,11 +49,36 @@ Crafty.scene('Travelling__town', function() {
 
     Crafty.e('ConsoleLine')
         .text('Travelling to the village...')
-        .bar('TRAVELLING_TO_TOWN_'+Game.console_line_ids, 20, function() { Crafty.scene('Town'); });
+        .done('Travelled to the village.')
+        .bar('TRAVELLING_TO_TOWN_'+Game.console_line_ids, 20, function() { Crafty.scene('Inn'); });
 });
 
-// TODO: town or inn?
-Crafty.scene('Town', function() {
+Crafty.scene('Inn', function() {
     setupMiniMap();
     setupCharacterScreen();
+
+    Crafty.e('ConsoleLine')
+        .text('Sleeping at the Inn...')
+        .done('Slept at the Inn.')
+        .bar('INN_'+Game.console_line_ids, 20, function() { Crafty.scene('Shop__sell'); });
+});
+
+Crafty.scene('Shop__sell', function() {
+    setupMiniMap();
+    setupCharacterScreen();
+
+    Crafty.e('ConsoleLine')
+        .text('Selling inventory...')
+        .done('Sold inventory.')
+        .bar('SHOP_SELLING_'+Game.console_line_ids, 20, function() { Crafty.scene('Shop__buy'); });
+});
+
+Crafty.scene('Shop__buy', function() {
+    setupMiniMap();
+    setupCharacterScreen();
+
+    Crafty.e('ConsoleLine')
+        .text('Buying from shop...')
+        .done('Bought items.')
+        .bar('SHOP_BUYING_'+Game.console_line_ids, 20, function() { Crafty.scene('Travelling__fight'); });
 });
