@@ -164,4 +164,9 @@ function setupCharacterScreen() {
         .at(1, 19)
         .label('Shield')
         .update(Character.shield()?Character.shield():'...');
+
+    Crafty.e('DisplayText')
+        .at(0, 22)
+        .label('Quest')
+        .update('Save the day...');
 }
