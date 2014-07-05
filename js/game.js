@@ -22,6 +22,7 @@ Game = {
         col_width: 170
     },
     console_line_ids: 0,
+    shop_inventory: [],
     // The total width of the game screen.
     width: function() {
         return 1280;

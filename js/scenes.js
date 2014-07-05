@@ -18,10 +18,11 @@ Crafty.scene('Fighting__victory', function(monster) {
     setupCharacterScreen();
 
     Character.gainExp(monster.level);
-    Character.addItem(ItemManager.getItem(monster.level, Character._level));
+    var item = ItemManager.getItem(monster.level, Character._level);
+    Character.addItem(item);
 
     Crafty.e('ConsoleLine')
-        .text('Victory! You gained a Potion and 34 gold!');
+        .text('Victory! You found a '+item._name+'!');
 
     // If inventory is full or hp below 15%
     // TODO: replace 100 with maxHp function
@@ -67,18 +68,58 @@ Crafty.scene('Shop__sell', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    Crafty.e('ConsoleLine')
-        .text('Selling inventory...')
-        .done('Sold inventory.')
-        .bar('SHOP_SELLING_'+Game.console_line_ids, 20, function() { Crafty.scene('Shop__buy'); });
+    var count = Character._inventory.length;
+
+    if(count > 0) {
+        var name = Character._inventory[count-1]._name;
+        Character._gold += Math.round(Character._inventory[count-1]._price / 5);
+        Character._inventory.pop();
+
+        Crafty.e('ConsoleLine')
+            .text('Selling '+name+'...')
+            .done('Sold '+name+'.')
+            .bar('SHOP_SELLING_'+Game.console_line_ids, 20, function() { Crafty.scene('Shop__sell'); });
+    } else {
+        Crafty.scene('Shop__enter');
+    }
+});
+
+Crafty.scene('Shop__enter', function() {
+    // TODO: Is this a memory leak?
+    Game.shop_inventory = [];
+    // Generate 5 - 20 items
+    var item_count = Math.floor(Math.random() * 16) + 5;
+    for(var i = 0; i < item_count; i++) {
+        Game.shop_inventory.push(ItemManager.getItem((Character._level + 5), Character._level));
+    }
+
+    Crafty.scene('Shop__buy');
 });
 
 Crafty.scene('Shop__buy', function() {
     setupMiniMap();
     setupCharacterScreen();
 
-    Crafty.e('ConsoleLine')
-        .text('Buying from shop...')
-        .done('Bought items.')
-        .bar('SHOP_BUYING_'+Game.console_line_ids, 20, function() { Crafty.scene('Travelling__fight'); });
+    if(0 < Game.shop_inventory.length && 0 < Character._gold) {
+        var tmp_item = Game.shop_inventory.pop();
+        if(tmp_item._price <= Character._gold && Character.isUpgrade(tmp_item)) {
+            Character.addItem(tmp_item);
+            //silently sell the item just replaced
+            if(Character._inventory.length > 0) {
+                Character._gold += Math.round(Character._inventory[Character._inventory.length-1]._price / 5);
+                Character._inventory.pop();
+            }
+            Character._gold -= tmp_item._price;
+
+            Crafty.e('ConsoleLine')
+                .text('Buying '+tmp_item._name+'...')
+                .done('Bought '+tmp_item._name+'.')
+                .bar('SHOP_BUYING_'+Game.console_line_ids, 20, function() { Crafty.scene('Shop__buy'); });
+        } else {
+            // Must be a better way to fix this than have this line twice.
+            Crafty.scene('Travelling__fight');
+        }
+    } else {
+        Crafty.scene('Travelling__fight');
+    }
 });
