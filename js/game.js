@@ -1,4 +1,6 @@
 Game = {
+    // TODO: Add hero wandering map
+    // TODO: Add inventory list to UI
     // This defines our grid's size and the size of each of its tiles
     // 384x256
     font: {

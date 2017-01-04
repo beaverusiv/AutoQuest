@@ -1,13 +1,16 @@
-#screen {
-	border: 1px solid grey;
-	width: 1000px;
-	font-size: 0.9em;
+html {
+	width: 100%;
+	height: 100%;
+	background: #ccc;
+	font-size: 14px;
 }
 
-#screen td.skinny {
-	width: 100px;
-}
-
-#screen td.fat {
-	width: 400px;
+body {
+	width: 1280px;
+	height: 768px;
+	position: relative;
+	top: 50%;
+	margin: -384px auto 0;
+	font-size: 0.8em;
+	line-height: 0.9em;
 }
