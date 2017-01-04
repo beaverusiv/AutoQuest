@@ -5,7 +5,7 @@ Crafty.c('Grid', {
 			h: Game.map_grid.tile.height
 		})
 	},
- 
+
 	// Locate this entity at the given position on the grid
 	at: function(x, y) {
 		if (x === undefined && y === undefined) {
@@ -22,23 +22,63 @@ Crafty.c('Grid', {
 Crafty.c('Actor', {
 	init: function() {
 		this.requires('2D, Canvas, Grid');
-	},
+	}
 });
- 
-// A Tree is just an Actor with a certain color
-Crafty.c('Tree', {
+
+Crafty.c('Snow', {
 	init: function() {
 		this.requires('Actor, Color')
-			.color('rgb(20, 125, 40)');
-	},
+			.color('rgb(255, 255, 255)');
+	}
 });
- 
-// A Bush is just an Actor with a certain color
-Crafty.c('Bush', {
+
+Crafty.c('Rock', {
 	init: function() {
 		this.requires('Actor, Color')
-			.color('rgb(20, 185, 40)');
-	},
+			.color('rgb(71, 71, 71)');
+	}
+});
+
+Crafty.c('Shallow Water', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(131, 131, 222)');
+    }
+});
+
+Crafty.c('Deep Water', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(22, 22, 162)');
+    }
+});
+
+Crafty.c('Forest', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(12, 102, 8)');
+    }
+});
+
+Crafty.c('Plains', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(213, 225, 27)');
+    }
+});
+
+Crafty.c('Town', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(200, 38, 179)');
+    }
+});
+
+Crafty.c('Dungeon', {
+    init: function() {
+        this.requires('Actor, Color')
+            .color('rgb(200, 38, 61)');
+    }
 });
 
 // Display Text

@@ -6,11 +6,11 @@ Game = {
         family: 'Noticia Text'
     },
     map_grid: {
-        width: 24,
-        height: 16,
+        width: 48,
+        height: 32,
         tile: {
-            width: 16,
-            height: 16
+            width: 8,
+            height: 8
         }
     },
     character_screen: {
@@ -39,7 +39,7 @@ Game = {
         Crafty.background('rgb(249, 223, 125)');
 
         Character.init();
-         
+
         // Simply start the "Game" scene to get things going
         Crafty.scene('Travelling__fight');
     },
@@ -55,7 +55,7 @@ Game = {
                 Crafty.trigger(_event+'_done');
             }
         }, _speed);
-    },
-    // Progrss bar that increments when an event is triggered
+    }
+    // Progress bar that increments when an event is triggered
     //startEventProgressBar()
-}
+};

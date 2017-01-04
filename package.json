@@ -1,0 +1,13 @@
+{
+  "name": "AutoQuest",
+  "version": "1.0.0",
+  "description": "Reincarnation of ProgressQuest",
+  "main": "game.js",
+  "repository": "https://github.com/beaverusiv/AutoQuest.git",
+  "author": "Nic Loomans <nic@bocapa.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "fast-simplex-noise": "^3.2.0",
+    "lodash": "^4.17.4"
+  }
+}

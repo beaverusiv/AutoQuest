@@ -1,5 +1,5 @@
 Crafty.scene('Fighting', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     var monster = MonsterManager.spawn(Character._level);
@@ -14,7 +14,7 @@ Crafty.scene('Fighting', function() {
 });
 
 Crafty.scene('Fighting__victory', function(monster) {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     Character.gainExp(monster.level);
@@ -35,7 +35,7 @@ Crafty.scene('Fighting__victory', function(monster) {
 });
 
 Crafty.scene('Travelling__fight', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     Crafty.e('ConsoleLine')
@@ -45,7 +45,7 @@ Crafty.scene('Travelling__fight', function() {
 });
 
 Crafty.scene('Travelling__town', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     Crafty.e('ConsoleLine')
@@ -55,7 +55,7 @@ Crafty.scene('Travelling__town', function() {
 });
 
 Crafty.scene('Inn', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     Crafty.e('ConsoleLine')
@@ -65,7 +65,7 @@ Crafty.scene('Inn', function() {
 });
 
 Crafty.scene('Shop__sell', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     var count = Character._inventory.length;
@@ -85,7 +85,6 @@ Crafty.scene('Shop__sell', function() {
 });
 
 Crafty.scene('Shop__enter', function() {
-    // TODO: Is this a memory leak?
     Game.shop_inventory = [];
     // Generate 5 - 20 items
     var item_count = Math.floor(Math.random() * 16) + 5;
@@ -97,7 +96,7 @@ Crafty.scene('Shop__enter', function() {
 });
 
 Crafty.scene('Shop__buy', function() {
-    setupMiniMap();
+    Map.render();
     setupCharacterScreen();
 
     if(0 < Game.shop_inventory.length && 0 < Character._gold) {
