@@ -1,5 +1,4 @@
 Map = {
-    // TODO: Generate towns, caves
     tiles: [],
     towns: [],
     dungeons: [],
@@ -26,11 +25,9 @@ Map = {
             if (this.tiles[x][y] <= water_line) {
                 if(this.tiles[x][y] > min + (water_line / 3.75)) {
                     if(Math.random() < 0.005) {
-                        this.tiles[x][y] = 'Dungeon';
                         this.dungeons.push({x: x, y: y});
-                    } else {
-                        this.tiles[x][y] = 'Shallow Water';
                     }
+                    this.tiles[x][y] = 'Shallow Water';
                 } else {
                     this.tiles[x][y] = 'Deep Water';
                 }
@@ -39,27 +36,21 @@ Map = {
                     this.tiles[x][y] = 'Snow';
                 } else {
                     if(Math.random() < 0.015) {
-                        this.tiles[x][y] = 'Dungeon';
                         this.dungeons.push({x: x, y: y});
-                    } else {
-                        this.tiles[x][y] = 'Rock';
                     }
+                    this.tiles[x][y] = 'Rock';
                 }
             } else {
                 if(this.tiles[x][y] > min + ((max - min) / 2.0)) {
                     if(Math.random() < 0.01) {
-                        this.tiles[x][y] = 'Dungeon';
                         this.dungeons.push({x: x, y: y});
-                    } else {
-                        this.tiles[x][y] = 'Forest';
                     }
+                    this.tiles[x][y] = 'Forest';
                 } else {
-                    if(Math.random() < 0.015) {
-                        this.tiles[x][y] = 'Town';
+                    if(Math.random() < 0.005) {
                         this.towns.push({x: x, y: y});
-                    } else {
-                        this.tiles[x][y] = 'Plains';
                     }
+                    this.tiles[x][y] = 'Plains';
                 }
             }
         }
@@ -70,6 +61,12 @@ Map = {
                 Crafty.e(this.tiles[x][y]).at(x, y);
             }
         }
+        _.each(this.towns, function(town) {
+            Crafty.e('Town').at(town.x-1, town.y-1);
+        });
+        _.each(this.dungeons, function(dungeon) {
+            Crafty.e('Dungeon').at(dungeon.x-1, dungeon.y-1);
+        });
     }
 };
 Map.init();

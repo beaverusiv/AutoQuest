@@ -6,16 +6,18 @@ Game = {
         family: 'Noticia Text'
     },
     map_grid: {
-        width: 48,
-        height: 32,
+        offset_x: 400,
+        offset_y: 10,
+        width: 54,
+        height: 41,
         tile: {
-            width: 8,
-            height: 8
+            width: 16,
+            height: 16
         }
     },
     character_screen: {
-        offset_x: 0,
-        offset_y: 266,
+        offset_x: 10,
+        offset_y: 10,
         padding: 10,
         width: 384,
         row_height: 18,
@@ -37,6 +39,35 @@ Game = {
         // Start crafty and set a background color so that we can see it's working
         Crafty.init(Game.width(), Game.height());
         Crafty.background('rgb(249, 223, 125)');
+        Crafty.load({
+            "sprites": {
+                "images/tileset.png": {
+                    tile: 16,
+                    tileh: 16,
+                    map: {
+                        snow: [ 7, 1 ],
+                        forest: [ 4, 11 ],
+                        plains: [ 1, 1 ]
+                    }
+                },
+                "images/water.png": {
+                    tile: 16,
+                    tileh: 16,
+                    map: {
+                        water: [ 0, 0 ]
+                    }
+                },
+                "images/mountains.png" : {
+                    tile: 16,
+                    tileh: 16,
+                    map: {
+                        rock: [ 2, 2 ]
+                    }
+                }
+            }
+        });
+        Crafty.sprite("images/tileset.png", { town: [ 32, 240, 48, 48 ] });
+        Crafty.sprite("images/tileset.png", { dungeon: [ 96, 288, 48, 48 ] });
 
         Character.init();
 

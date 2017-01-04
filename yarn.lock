@@ -2,6 +2,45 @@
 # yarn lockfile v1
 
 
+brfs@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/brfs/-/brfs-1.0.1.tgz#1e445500c7d4bdee83612974122eead96396602c"
+  dependencies:
+    escodegen "0.0.17"
+    falafel "~0.1.6"
+    through "~2.2.0"
+
+craftyjs@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/craftyjs/-/craftyjs-0.7.1.tgz#1e66c5996e7b69f9c258060785cbb7c870139c83"
+  dependencies:
+    brfs "1.0.1"
+    node-localstorage "^0.5.0"
+    require-nocache "1.0.0"
+
+escodegen@0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-0.0.17.tgz#1e78d17df1004fd7a88f2fed3b8b8592f3217f9c"
+  dependencies:
+    esprima "~1.0.2"
+    estraverse "~0.0.4"
+  optionalDependencies:
+    source-map ">= 0.1.2"
+
+esprima@~1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.0.4.tgz#9f557e08fc3b4d26ece9dd34f8fbf476b62585ad"
+
+estraverse@~0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-0.0.4.tgz#01a0932dfee574684a598af5a67c3bf9b6428db2"
+
+falafel@~0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/falafel/-/falafel-0.1.6.tgz#3084cf3d41b59d15c813be6f259557fdc82b0660"
+  dependencies:
+    esprima "~1.0.2"
+
 fast-simplex-noise@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/fast-simplex-noise/-/fast-simplex-noise-3.2.0.tgz#ae0b3cd7b9c2a056ecc72c2f7440cf7d0e3bca96"
@@ -9,3 +48,19 @@ fast-simplex-noise@^3.2.0:
 lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+node-localstorage@^0.5.0:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/node-localstorage/-/node-localstorage-0.5.2.tgz#94b48d5ac6fb80e482732e8562c277a5acacfee5"
+
+require-nocache@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/require-nocache/-/require-nocache-1.0.0.tgz#a665d0b60a07e8249875790a4d350219d3c85fa3"
+
+"source-map@>= 0.1.2":
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+
+through@~2.2.0:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/through/-/through-2.2.7.tgz#6e8e21200191d4eb6a99f6f010df46aa1c6eb2bd"

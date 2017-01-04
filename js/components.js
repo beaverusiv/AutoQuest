@@ -9,9 +9,9 @@ Crafty.c('Grid', {
 	// Locate this entity at the given position on the grid
 	at: function(x, y) {
 		if (x === undefined && y === undefined) {
-			return { x: this.x/Game.map_grid.tile.width, y: this.y/Game.map_grid.tile.height }
+			return { x: Game.map_grid.offset_x + this.x/Game.map_grid.tile.width, y: Game.map_grid.offset_y + this.y/Game.map_grid.tile.height }
 		} else {
-			this.attr({ x: x * Game.map_grid.tile.width, y: y * Game.map_grid.tile.height });
+			this.attr({ x: Game.map_grid.offset_x + x * Game.map_grid.tile.width, y: Game.map_grid.offset_y + y * Game.map_grid.tile.height });
 			return this;
 		}
 	}
@@ -27,57 +27,49 @@ Crafty.c('Actor', {
 
 Crafty.c('Snow', {
 	init: function() {
-		this.requires('Actor, Color')
-			.color('rgb(255, 255, 255)');
+		this.requires('Actor, snow');
 	}
 });
 
 Crafty.c('Rock', {
 	init: function() {
-		this.requires('Actor, Color')
-			.color('rgb(71, 71, 71)');
+		this.requires('Actor, rock');
 	}
 });
 
 Crafty.c('Shallow Water', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(131, 131, 222)');
+        this.requires('Actor, water');
     }
 });
 
 Crafty.c('Deep Water', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(22, 22, 162)');
+        this.requires('Actor, water');
     }
 });
 
 Crafty.c('Forest', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(12, 102, 8)');
+        this.requires('Actor, forest');
     }
 });
 
 Crafty.c('Plains', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(213, 225, 27)');
+        this.requires('Actor, plains');
     }
 });
 
 Crafty.c('Town', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(200, 38, 179)');
+        this.requires('Actor, town');
     }
 });
 
 Crafty.c('Dungeon', {
     init: function() {
-        this.requires('Actor, Color')
-            .color('rgb(200, 38, 61)');
+        this.requires('Actor, dungeon');
     }
 });
 
@@ -112,7 +104,7 @@ Crafty.c('DisplayText', {
 			this.text(this.name + ': ' + this.value);
 		}
 		return this;
-	},
+	}
 });
 
 Crafty.c('ConsoleItem', {
@@ -145,7 +137,7 @@ Crafty.c('ConsoleLine', {
 
 	    this.bind(_event+'_done', function() {
 	    	this.text(this._done);
-	    })
+	    });
 
 	    return this;
 	},
