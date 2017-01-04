@@ -17,7 +17,6 @@ Map = {
         var max = Math.max.apply(null, flattened_tiles);
         var water_line = min + (max - min) * 0.3;
         var mountain_line = min + (max - min) * 0.8;
-        var towns = [];
 
         // Convert to entity codes
         for (x = 0; x < Game.map_grid.width; x++) for (y = 0; y < Game.map_grid.height; y++) {
@@ -56,6 +55,12 @@ Map = {
         }
     },
     render: function() {
+
+        Crafty.e("2D, DOM, ProgressBar")
+            .attr({ w: 175, h: 10, x: 205, y: 410 })
+            .progressBar(100, false, "blue", "green")
+            .updateBarProgress(QuestManager.getProgress());
+
         for (var x = 0; x < Game.map_grid.width; x++) {
             for (var y = 0; y < Game.map_grid.height; y++) {
                 Crafty.e(this.tiles[x][y]).at(x, y);

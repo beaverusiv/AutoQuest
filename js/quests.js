@@ -52,7 +52,7 @@ QuestManager = {
 				this._name = this._fetch_quests.verbs[rand] + " ";
 				var amount = Math.floor(Math.random() * 10) + 4;
 				this._name += (amount==1)?"a":amount + " ";
-				rand = Math.floor(Math.random() * this._fetchquests.nouns.length + 1) - 1;
+				rand = Math.floor(Math.random() * this._fetch_quests.nouns.length + 1) - 1;
 				this._name += this._fetch_quests.nouns[rand] + ((amount>1)?"s":"");
 				this._target = amount * 2;
 				break;

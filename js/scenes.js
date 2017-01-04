@@ -20,6 +20,7 @@ Crafty.scene('Fighting__victory', function(monster) {
     Character.gainExp(monster.level);
     var item = ItemManager.getItem(monster.level, Character._level);
     Character.addItem(item);
+    QuestManager.progressQuest();
 
     Crafty.e('ConsoleLine')
         .text('Victory! You found a '+item._name+'!');
