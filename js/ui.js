@@ -152,5 +152,5 @@ function setupCharacterScreen() {
     Crafty.e('DisplayText')
         .at(0, 22)
         .label('Quest')
-        .update('Save the day...');
+        .update(QuestManager.getQuest());
 }
